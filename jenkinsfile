@@ -28,10 +28,12 @@ pipeline
         stage("Deploy")
         {
             steps {
-                withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'kube', namespace: '', restrictKubeConfigAccess: false, serverUrl: 'https://56B049986CD4E2BBB7E8498192912684.gr7.us-east-1.eks.amazonaws.com') {
-        sh "kubectl apply -f kube-deploy.yaml"
+                withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: '', namespace: '', restrictKubeConfigAccess: false, serverUrl: '') {
+               sh "kubectl create namespace dtag-dev"
 }
-            }
+}
+}
+    }       
+}
         }
-    }
-}
+
