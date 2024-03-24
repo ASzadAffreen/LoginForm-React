@@ -29,7 +29,7 @@ pipeline
         {
             steps {
                 withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: '', namespace: '', restrictKubeConfigAccess: false, serverUrl: '') {
-               sh "kubectl create namespaces dtag-dev"
+               sh "kubectl apply -f kube-deploy.yaml"
 }
 }
 }
