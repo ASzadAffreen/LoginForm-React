@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: guestbook-ingress
+  namespace: dtag-dev
+spec:
+  rules:
+  - host: a1c825e2a0bda497184d4c5058277bc1-54f049c667d74c26.elb.us-east-1.amazonaws.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: loginform-react
+            port:
+              number: 5000
+      - path: /index.html
+        pathType: Prefix
+        backend:
+          service:
+            name: loginformdtag
+            port:
+              number: 80
