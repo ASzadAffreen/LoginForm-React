@@ -5,7 +5,7 @@ metadata:
   namespace: dtag-dev
 spec:
   rules:
-  - host: a1c825e2a0bda497184d4c5058277bc1-54f049c667d74c26.elb.us-east-1.amazonaws.com
+  - host: a8ceb8d513e134b40b5fc32bc0d5b5ea-d1575586bd9ee352.elb.us-east-1.amazonaws.com
     http:
       paths:
       - path: /
@@ -14,11 +14,5 @@ spec:
           service:
             name: loginform-react
             port:
-              number: 5000
-      - path: /index.html
-        pathType: Prefix
-        backend:
-          service:
-            name: loginformdtag
-            port:
-              number: 80
+              number: 3000
+     
